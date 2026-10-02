@@ -1,0 +1,1047 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Ramo de Hot Wheels ❤️</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            width: 100%;
+            min-height: 100%;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            overflow-x: hidden;
+            font-family: Arial, sans-serif;
+
+            background:
+                radial-gradient(
+                    circle at center,
+                    #ffffff 0%,
+                    #ffe8f2 40%,
+                    #ffc1d9 75%,
+                    #ee8eb6 100%
+                );
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+
+        /* =========================
+           TITULO
+        ========================= */
+
+        .titulo {
+            position: relative;
+            width: 100%;
+            text-align: center;
+
+            margin-top: 15px;
+
+            color: #c2185b;
+            font-size: 42px;
+            font-weight: bold;
+
+            text-shadow:
+                2px 2px white,
+                4px 4px 10px rgba(100, 0, 50, .25);
+
+            z-index: 200;
+        }
+
+
+        .subtitulo {
+            position: relative;
+            width: 100%;
+            text-align: center;
+
+            margin-top: 5px;
+
+            color: #7b1748;
+            font-size: 18px;
+
+            z-index: 200;
+        }
+
+
+        /* =========================
+           RAMO
+        ========================= */
+
+        .ramo {
+            position: relative;
+
+            width: 1200px;
+            height: 720px;
+
+            margin-top: 20px;
+
+            transform: scale(.88);
+            transform-origin: top center;
+        }
+
+
+        /* =========================
+           SOMBRA
+        ========================= */
+
+        .sombra {
+            position: absolute;
+
+            left: 190px;
+            bottom: 15px;
+
+            width: 620px;
+            height: 80px;
+
+            background: rgba(80, 0, 40, .25);
+
+            border-radius: 50%;
+
+            filter: blur(25px);
+
+            z-index: 1;
+        }
+
+
+        /* =========================
+           PAPEL DEL RAMO
+        ========================= */
+
+        .papel-trasero {
+            position: absolute;
+
+            left: 155px;
+            top: 300px;
+
+            width: 690px;
+            height: 380px;
+
+            background:
+                linear-gradient(
+                    105deg,
+                    #c72b68,
+                    #f58eb5,
+                    #ffe0eb,
+                    #ef82aa,
+                    #bd205c
+                );
+
+            clip-path: polygon(
+                0 0,
+                100% 8%,
+                86% 100%,
+                14% 100%
+            );
+
+            box-shadow:
+                0 18px 30px rgba(90, 0, 40, .3);
+
+            z-index: 10;
+        }
+
+
+        .papel {
+            position: absolute;
+
+            left: 210px;
+            top: 270px;
+
+            width: 580px;
+            height: 420px;
+
+            background:
+                linear-gradient(
+                    110deg,
+                    #f08bb0,
+                    #ffeaf3 25%,
+                    #f7a9c6 50%,
+                    #fff0f6 70%,
+                    #df719b
+                );
+
+            clip-path: polygon(
+                8% 0,
+                92% 0,
+                100% 12%,
+                88% 100%,
+                12% 100%,
+                0 12%
+            );
+
+            box-shadow:
+                0 15px 25px rgba(80, 0, 40, .25);
+
+            z-index: 12;
+        }
+
+
+        /* =========================
+           PLIEGUES
+        ========================= */
+
+        .pliegue {
+            position: absolute;
+
+            top: 285px;
+
+            width: 8px;
+            height: 360px;
+
+            background: rgba(255, 255, 255, .4);
+
+            z-index: 15;
+        }
+
+
+        .p1 {
+            left: 285px;
+            transform: rotate(8deg);
+        }
+
+        .p2 {
+            left: 455px;
+            transform: rotate(-5deg);
+        }
+
+        .p3 {
+            left: 625px;
+            transform: rotate(8deg);
+        }
+
+
+        /* =========================
+           TALLOS
+        ========================= */
+
+        .tallo {
+            position: absolute;
+
+            width: 14px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #125b29,
+                    #55a95d,
+                    #0d4b20
+                );
+
+            border-radius: 10px;
+
+            transform-origin: bottom center;
+
+            box-shadow:
+                2px 3px 5px rgba(0, 0, 0, .3);
+
+            z-index: 22;
+        }
+
+
+        .t1 {
+            height: 430px;
+            left: 250px;
+            top: 100px;
+            transform: rotate(-31deg);
+        }
+
+        .t2 {
+            height: 455px;
+            left: 320px;
+            top: 80px;
+            transform: rotate(-20deg);
+        }
+
+        .t3 {
+            height: 475px;
+            left: 390px;
+            top: 65px;
+            transform: rotate(-9deg);
+        }
+
+        .t4 {
+            height: 480px;
+            left: 465px;
+            top: 60px;
+            transform: rotate(2deg);
+        }
+
+        .t5 {
+            height: 465px;
+            left: 540px;
+            top: 75px;
+            transform: rotate(14deg);
+        }
+
+        .t6 {
+            height: 440px;
+            left: 610px;
+            top: 95px;
+            transform: rotate(25deg);
+        }
+
+        .t7 {
+            height: 400px;
+            left: 680px;
+            top: 120px;
+            transform: rotate(34deg);
+        }
+
+
+        /* =========================
+           HOJAS
+        ========================= */
+
+        .hoja {
+            position: absolute;
+
+            width: 80px;
+            height: 35px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #125a29,
+                    #62b96a
+                );
+
+            border-radius: 100% 0 100% 0;
+
+            z-index: 28;
+        }
+
+
+        .h1 {
+            left: 205px;
+            top: 365px;
+            transform: rotate(-35deg);
+        }
+
+        .h2 {
+            left: 285px;
+            top: 415px;
+            transform: rotate(30deg);
+        }
+
+        .h3 {
+            left: 600px;
+            top: 390px;
+            transform: rotate(-25deg);
+        }
+
+        .h4 {
+            left: 690px;
+            top: 350px;
+            transform: rotate(35deg);
+        }
+
+
+        /* =========================
+           HOT WHEELS
+        ========================= */
+
+        .auto {
+            position: absolute;
+
+            width: 280px;
+            height: 210px;
+
+            object-fit: contain;
+
+            filter:
+                drop-shadow(
+                    6px 10px 7px rgba(0, 0, 0, .5)
+                );
+
+            z-index: 50;
+
+            transition: .3s;
+        }
+
+
+        .auto:hover {
+            filter:
+                drop-shadow(
+                    10px 15px 10px rgba(0, 0, 0, .6)
+                );
+
+            transform:
+                scale(1.08)
+                rotate(0deg) !important;
+        }
+
+
+        /* POSICIONES DE LOS 9 CARROS */
+
+        .c1 {
+            left: 30px;
+            top: 120px;
+            transform: rotate(-38deg);
+        }
+
+        .c2 {
+            left: 135px;
+            top: 55px;
+            transform: rotate(-27deg);
+        }
+
+        .c3 {
+            left: 265px;
+            top: 20px;
+            transform: rotate(-13deg);
+        }
+
+        .c4 {
+            left: 405px;
+            top: 5px;
+            transform: rotate(-2deg);
+        }
+
+        .c5 {
+            left: 540px;
+            top: 10px;
+            transform: rotate(10deg);
+        }
+
+        .c6 {
+            left: 675px;
+            top: 55px;
+            transform: rotate(25deg);
+        }
+
+        .c7 {
+            left: 805px;
+            top: 115px;
+            transform: rotate(38deg);
+        }
+
+        .c8 {
+            left: 210px;
+            top: 180px;
+            transform: rotate(-17deg);
+        }
+
+        .c9 {
+            left: 600px;
+            top: 180px;
+            transform: rotate(18deg);
+        }
+
+
+        /* =========================
+           FOTO EN MEDIO
+           COMO OTRO CARRO
+        ========================= */
+
+        .carro-centro {
+            position: absolute;
+
+            left: 410px;
+            top: 135px;
+
+            width: 280px;
+            height: 210px;
+
+            object-fit: contain;
+
+            border-radius: 20px;
+
+            z-index: 85;
+
+            filter:
+                drop-shadow(
+                    6px 10px 7px rgba(0, 0, 0, .5)
+                );
+        }
+
+
+        /* =========================
+           CINTA
+        ========================= */
+
+        .cinta {
+            position: absolute;
+
+            left: 365px;
+            top: 485px;
+
+            width: 270px;
+            height: 80px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #b51255,
+                    #fa6b9e,
+                    #c4185c
+                );
+
+            border-radius: 12px;
+
+            box-shadow:
+                0 8px 14px rgba(80, 0, 40, .3);
+
+            z-index: 70;
+        }
+
+
+        /* =========================
+           MOÑO
+        ========================= */
+
+        .mono {
+            position: absolute;
+
+            top: 455px;
+
+            width: 145px;
+            height: 105px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #d51e64,
+                    #ff9fc2,
+                    #bc1555
+                );
+
+            z-index: 75;
+        }
+
+
+        .mono-izq {
+            left: 245px;
+
+            border-radius:
+                75% 20% 75% 20%;
+
+            transform: rotate(-25deg);
+        }
+
+
+        .mono-der {
+            left: 610px;
+
+            border-radius:
+                20% 75% 20% 75%;
+
+            transform: rotate(25deg);
+        }
+
+
+        /* =========================
+           MENSAJE
+        ========================= */
+
+        .mensaje {
+            position: relative;
+
+            width: fit-content;
+            max-width: 90%;
+
+            margin-top: -120px;
+            margin-bottom: 20px;
+
+            padding: 13px 40px;
+
+            background: rgba(255, 255, 255, .9);
+
+            border-radius: 35px;
+
+            color: #c2185b;
+
+            font-size: 28px;
+            font-weight: bold;
+
+            text-align: center;
+
+            box-shadow:
+                0 6px 20px rgba(150, 0, 70, .25);
+
+            z-index: 200;
+        }
+
+
+        /* =========================
+           CORAZONES
+        ========================= */
+
+        .corazon {
+            position: fixed;
+
+            color: #e91e63;
+
+            font-size: 32px;
+
+            animation:
+                flotar 4s infinite ease-in-out;
+
+            z-index: 150;
+        }
+
+
+        .corazon1 {
+            left: 8%;
+            top: 25%;
+        }
+
+        .corazon2 {
+            right: 8%;
+            top: 28%;
+
+            animation-delay: 1s;
+        }
+
+        .corazon3 {
+            left: 12%;
+            bottom: 22%;
+
+            animation-delay: 2s;
+        }
+
+        .corazon4 {
+            right: 12%;
+            bottom: 22%;
+
+            animation-delay: 3s;
+        }
+
+
+        /* =========================
+           BRILLOS
+        ========================= */
+
+        .brillo {
+            position: fixed;
+
+            color: white;
+
+            font-size: 30px;
+
+            animation:
+                brillo 2s infinite alternate;
+
+            z-index: 150;
+        }
+
+
+        .b1 {
+            left: 17%;
+            top: 16%;
+        }
+
+        .b2 {
+            right: 18%;
+            top: 18%;
+
+            animation-delay: .5s;
+        }
+
+        .b3 {
+            left: 10%;
+            top: 55%;
+
+            animation-delay: 1s;
+        }
+
+        .b4 {
+            right: 10%;
+            top: 55%;
+
+            animation-delay: 1.5s;
+        }
+
+
+        /* =========================
+           ANIMACIONES
+        ========================= */
+
+        @keyframes flotar {
+
+            0%, 100% {
+                transform:
+                    translateY(0)
+                    rotate(-5deg);
+            }
+
+            50% {
+                transform:
+                    translateY(-18px)
+                    rotate(5deg);
+            }
+        }
+
+
+        @keyframes brillo {
+
+            from {
+                opacity: .3;
+                transform: scale(.8);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1.3);
+            }
+        }
+
+
+        /* ==================================================
+           CELULAR
+        ================================================== */
+
+        @media (max-width: 600px) {
+
+            body {
+                overflow-x: hidden;
+                overflow-y: auto;
+
+                min-height: 100vh;
+            }
+
+
+            .titulo {
+                font-size: 27px;
+
+                margin-top: 15px;
+
+                padding: 0 10px;
+            }
+
+
+            .subtitulo {
+                font-size: 14px;
+
+                padding: 0 15px;
+
+                margin-top: 5px;
+            }
+
+
+            /*
+             * El ramo conserva sus proporciones,
+             * pero se hace más pequeño para entrar
+             * en la pantalla del celular.
+             */
+
+            .ramo {
+
+                width: 1200px;
+                height: 720px;
+
+                margin-top: 15px;
+
+                transform:
+                    scale(.43);
+
+                transform-origin:
+                    top center;
+
+                margin-left: 0;
+                margin-right: 0;
+            }
+
+
+            /* Foto central */
+
+            .carro-centro {
+
+                left: 410px;
+                top: 135px;
+
+                width: 280px;
+                height: 210px;
+            }
+
+
+            /* Mensaje */
+
+            .mensaje {
+
+                width: 90%;
+
+                margin-top: -270px;
+
+                margin-bottom: 25px;
+
+                padding: 10px 15px;
+
+                font-size: 19px;
+            }
+
+
+            /* Corazones */
+
+            .corazon {
+                font-size: 22px;
+            }
+
+
+            /* Brillos */
+
+            .brillo {
+                font-size: 20px;
+            }
+
+        }
+
+
+        /* ==================================================
+           CELULARES MUY PEQUEÑOS
+        ================================================== */
+
+        @media (max-width: 380px) {
+
+            .titulo {
+                font-size: 23px;
+            }
+
+
+            .subtitulo {
+                font-size: 12px;
+            }
+
+
+            .ramo {
+
+                transform:
+                    scale(.36);
+
+            }
+
+
+            .mensaje {
+
+                margin-top: -320px;
+
+                font-size: 17px;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         TITULO
+    ========================= -->
+
+    <div class="titulo">
+        ❤️ Mi regalo para ti ❤️
+    </div>
+
+
+    <div class="subtitulo">
+        Un ramo hecho especialmente para ti 🚗🌹
+    </div>
+
+
+    <!-- =========================
+         DECORACIÓN
+    ========================= -->
+
+    <div class="corazon corazon1">
+        ❤️
+    </div>
+
+    <div class="corazon corazon2">
+        💗
+    </div>
+
+    <div class="corazon corazon3">
+        💕
+    </div>
+
+    <div class="corazon corazon4">
+        ❤️
+    </div>
+
+
+    <div class="brillo b1">
+        ✨
+    </div>
+
+    <div class="brillo b2">
+        ✨
+    </div>
+
+    <div class="brillo b3">
+        ⭐
+    </div>
+
+    <div class="brillo b4">
+        ✨
+    </div>
+
+
+
+    <!-- =========================
+         RAMO
+    ========================= -->
+
+    <div class="ramo">
+
+
+        <!-- Sombra -->
+
+        <div class="sombra"></div>
+
+
+        <!-- Papel -->
+
+        <div class="papel-trasero"></div>
+
+        <div class="papel"></div>
+
+
+        <!-- Pliegues -->
+
+        <div class="pliegue p1"></div>
+
+        <div class="pliegue p2"></div>
+
+        <div class="pliegue p3"></div>
+
+
+        <!-- Tallos -->
+
+        <div class="tallo t1"></div>
+
+        <div class="tallo t2"></div>
+
+        <div class="tallo t3"></div>
+
+        <div class="tallo t4"></div>
+
+        <div class="tallo t5"></div>
+
+        <div class="tallo t6"></div>
+
+        <div class="tallo t7"></div>
+
+
+        <!-- Hojas -->
+
+        <div class="hoja h1"></div>
+
+        <div class="hoja h2"></div>
+
+        <div class="hoja h3"></div>
+
+        <div class="hoja h4"></div>
+
+
+        <!-- =========================
+             HOT WHEELS
+        ========================= -->
+
+        <img
+            class="auto c1"
+            src="hotwheels1.jpg.png"
+            alt="Hot Wheels 1"
+        >
+
+        <img
+            class="auto c2"
+            src="hotwheels2.jpg.png"
+            alt="Hot Wheels 2"
+        >
+
+        <img
+            class="auto c3"
+            src="hotwheels3.jpg.png"
+            alt="Hot Wheels 3"
+        >
+
+        <img
+            class="auto c4"
+            src="hotwheels4.jpg.png"
+            alt="Hot Wheels 4"
+        >
+
+        <img
+            class="auto c5"
+            src="hotwheels5.jpg.png"
+            alt="Hot Wheels 5"
+        >
+
+        <img
+            class="auto c6"
+            src="hotwheels6.jpg.png"
+            alt="Hot Wheels 6"
+        >
+
+        <img
+            class="auto c7"
+            src="hotwheels7.jpg.png"
+            alt="Hot Wheels 7"
+        >
+
+        <img
+            class="auto c8"
+            src="hotwheels8.jpg.png"
+            alt="Hot Wheels 8"
+        >
+
+        <img
+            class="auto c9"
+            src="hotwheels9.jpg.png"
+            alt="Hot Wheels 9"
+        >
+
+
+        <!-- =========================
+             FOTO COMO CARRO CENTRAL
+        ========================= -->
+
+        <img
+            class="auto carro-centro"
+            src="nosostros.jpg.jpeg"
+            alt="Nuestro carrito"
+        >
+
+
+        <!-- =========================
+             MOÑO
+        ========================= -->
+
+        <div class="cinta"></div>
+
+        <div class="mono mono-izq"></div>
+
+        <div class="mono mono-der"></div>
+
+
+    </div>
+
+
+    <!-- =========================
+         MENSAJE
+    ========================= -->
+
+    <div class="mensaje">
+        💗 Te amo, mi amorcito 💗
+    </div>
+
+
+</body>
+
+</html>
